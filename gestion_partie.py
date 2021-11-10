@@ -23,9 +23,12 @@ class Partie:
         propose_lettre(str)     modifie _lettres_proposees (et applique __ajoute_erreur__ ou modifie _gagne)
         propose_mot(str)        compare _mot_a_trouver (et applique __ajoute_erreur__ ou modifie _gagne)
     """
-    def __init__(self, mot_mystere, nb_erreurs=erreurs_max):
+    def __init__(self, mot_mystere=None, nb_erreurs=erreurs_max):
         self._mot_a_trouver = mot_mystere
-        self._lettres_proposees = {mot_mystere[0], mot_mystere[-1]}
+        if mot_mystere is not None:
+            self._lettres_proposees = {mot_mystere[0], mot_mystere[-1]}
+        else:
+            self._lettres_proposees = set()
         self._nb_erreurs = nb_erreurs
         self._gagne = False
         self._perdu = False
