@@ -20,6 +20,8 @@ version fenetrée du jeu de pendu en python
 
 **TODO** la classe *FenetrePendu* doit gérer les interactions entre ses objets.
 
+**TODO** on pourra proposer une modification de *choix_nom* en utilisant la library **csv** plutôt que **pandas** qui alourdit inutilement (modification proposable aux élèves) 
+
 ## Idées d'améliorations possibles:
 
 On pourra rajouter un popup lorsque le mot est trouver pour renvoyer la définition du mot sur un dictionnaire en ligne (je pense à [https://www.cnrtl.fr](https://www.cnrtl.fr))  
