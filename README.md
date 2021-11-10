@@ -1,7 +1,7 @@
 # pendu
 version fenetrée du jeu de pendu en python
 
-### detail des fichiers et de leur rôle:
+## detail des fichiers et de leur rôle:
 
 - **main** contient la classe FenetrePendu qui gère le déroulé d'une partie et l'interaction entre les objets qui la constitue
 - **tools** implémente les classes
@@ -16,6 +16,11 @@ version fenetrée du jeu de pendu en python
   - **_choisir_mot_** qui prend un nom commun dans le dictionnaire de la langue française (issu du CNAM au format csv)
   - **_verif_mot_** qui s'assure qu'un nom appartient à ce dictionnaire
 
+## reste à faire
+
+**TODO** la classe *FenetrePendu* doit gérer les interactions entre ses objets.
+
 ## Idées d'améliorations possibles:
 
-On pourra rajouter un popup lorsque le mot est trouver pour renvoyer la définition du mot sur un dictionnaire en ligne (je pense à [https://www.cnrtl.fr](https://www.cnrtl.fr))
+On pourra rajouter un popup lorsque le mot est trouver pour renvoyer la définition du mot sur un dictionnaire en ligne (je pense à [https://www.cnrtl.fr](https://www.cnrtl.fr))  
+De même dans la barre de menu on peut ajouter un menu pour choisir la police. L'appli va chercher les polices existantes sur l'OS et permet d'en sélectionner une.
