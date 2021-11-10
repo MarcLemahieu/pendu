@@ -15,3 +15,7 @@ version fenetrée du jeu de pendu en python
 - **choix_nom** qui contient deux fonctions essentielles au jeu:
   - **_choisir_mot_** qui prend un nom commun dans le dictionnaire de la langue française (issu du CNAM au format csv)
   - **_verif_mot_** qui s'assure qu'un nom appartient à ce dictionnaire
+
+## Idées d'améliorations possibles:
+
+On pourra rajouter un popup lorsque le mot est trouver pour renvoyer la définition du mot sur un dictionnaire en ligne (je pense à [https://www.cnrtl.fr](https://www.cnrtl.fr))
