@@ -25,6 +25,6 @@ version fenetrée du jeu de pendu en python
 ## Idées d'améliorations possibles:
 
 - On pourra rajouter un popup lorsque le mot est trouver pour renvoyer la définition du mot sur un dictionnaire en ligne (je pense à [https://www.cnrtl.fr](https://www.cnrtl.fr))  
-  la bibliothèque [https://docs.python.org/3/library/webbrowser.html](webbrowser) pourra à ce titre être utile.
+  la bibliothèque [webbrowser](https://docs.python.org/3/library/webbrowser.html) pourra à ce titre être utile.
   
 - De même dans la barre de menu on peut ajouter un menu pour choisir la police. L'appli va chercher les polices existantes sur l'OS et permet d'en sélectionner une.
