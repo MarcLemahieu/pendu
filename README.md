@@ -20,11 +20,11 @@ version fenetrée du jeu de pendu en python
 
 ## reste à faire
 
-**TODO** la classe *FenetrePendu* doit gérer les interactions entre ses objets.
-
 **TODO** on pourra proposer une modification de *choix_nom* en utilisant la library **csv** plutôt que **pandas** qui alourdit inutilement (modification proposable aux élèves) 
 
 ## Idées d'améliorations possibles:
 
-On pourra rajouter un popup lorsque le mot est trouver pour renvoyer la définition du mot sur un dictionnaire en ligne (je pense à [https://www.cnrtl.fr](https://www.cnrtl.fr))  
-De même dans la barre de menu on peut ajouter un menu pour choisir la police. L'appli va chercher les polices existantes sur l'OS et permet d'en sélectionner une.
+- On pourra rajouter un popup lorsque le mot est trouver pour renvoyer la définition du mot sur un dictionnaire en ligne (je pense à [https://www.cnrtl.fr](https://www.cnrtl.fr))  
+  la bibliothèque [https://docs.python.org/3/library/webbrowser.html](webbrowser) pourra à ce titre être utile.
+  
+- De même dans la barre de menu on peut ajouter un menu pour choisir la police. L'appli va chercher les polices existantes sur l'OS et permet d'en sélectionner une.
