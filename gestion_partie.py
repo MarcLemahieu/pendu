@@ -1,4 +1,5 @@
 # la classe gestion_partie s'occupe de la gestion du jeu quand le mot est choisi
+# sans gérer aucunement la partie graphique
 erreurs_max = 8
 
 
@@ -14,11 +15,12 @@ class Partie:
         _perdu (bool)initialisé à False
     @ méthodes:
         __init__(mot_mystère: str, nb_erreurs=erreurs_max: int)
-        reset_mot_a_trouver(self, mot_propose) relance le jeu et réinitialise les attributs
+        reset_partie(self, mot_propose) relance le jeu et réinitialise les attributs
         get_gagne()->bool       renvoie _gagne
         get_perdu()->bool       renvoie _perdu
         get_propose()->set(str) renvoie _lettres_proposees
-        mot_affiche()->str      renvoie le str à afficher au fil de la partie
+        mot_affiche()->str      renvoie le str à afficher au fil de la partie remplace
+                                les caractères non encore trouvés par des - .
         __ajoute_erreur__()     modifie _nb_erreurs (et _perdu selon les cas)
         propose_lettre(str)     modifie _lettres_proposees (et applique __ajoute_erreur__ ou modifie _gagne)
         propose_mot(str)        compare _mot_a_trouver (et applique __ajoute_erreur__ ou modifie _gagne)
@@ -34,15 +36,20 @@ class Partie:
         self._perdu = False
 
     @property
-    def __repr__(self):
+    def __str__(self):
         return f"Jeu de pendu:\n\nnbr d'erreurs: {8-self._nb_erreurs}\nmot à trouver: {self.mot_affiche()}"
 
-    def reset_mot_a_trouver(self, mot_propose):
+    def reset_partie(self, mot_propose):
+        # print(self._mot_a_trouver,self._perdu,self._nb_erreurs,self._lettres_proposees)
         self._mot_a_trouver = mot_propose
         self._lettres_proposees = set()
+        if isinstance(mot_propose,str):
+            self._lettres_proposees.add(mot_propose[0])
+            self._lettres_proposees.add(mot_propose[-1])
         self._nb_erreurs = erreurs_max
         self._gagne = False
         self._perdu = False
+        # print(self._mot_a_trouver,self._perdu,self._nb_erreurs,self._lettres_proposees)
 
     def get_gagne(self):
         return self._gagne
@@ -75,11 +82,12 @@ class Partie:
         self._lettres_proposees.add(lettre)
         if lettre not in self._mot_a_trouver:
             self.__ajoute_erreur__()
-        if self.mot_affiche() == self._mot_a_trouver:
+        elif self.mot_affiche() == self._mot_a_trouver:
             self._gagne = True
 
     def propose_mot(self, mot):
-        if mot == self.mot_affiche():
+        print(mot)
+        if mot == self._mot_a_trouver:
             self._gagne = True
         else:
             self.__ajoute_erreur__()
