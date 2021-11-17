@@ -86,7 +86,7 @@ class Partie:
             self._gagne = True
 
     def propose_mot(self, mot):
-        print(mot)
+        # print(mot)
         if mot == self._mot_a_trouver:
             self._gagne = True
         else:
