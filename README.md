@@ -13,9 +13,9 @@ version fenetrée du jeu de pendu en python
   - **MenuPendu(_Menu_)** qui organise le menu pour lancer une partie ou quitter
   - **Entree(_Entry_)** qui surclasse le champde saisie pour l'entrée d'un mot complet(lettre seule possible)
   - **A_trouver(_Label_)** qui affiche les lettres découvertes du mot
-- **gestion_partie** qui contient la classe Partie qui s'occupe de l'état du jeu et qui sera la classe à laisser développer par les élèves
+- **gestion_partie** qui contient la classe **Partie** qui s'occupe de l'état du jeu et qui sera la classe à laisser développer par les élèves
 - **choix_nom** qui contient deux fonctions essentielles au jeu:
-  - **_choisir_mot_** qui prend un nom commun dans le dictionnaire de la langue française (issu du CNAM au format csv)
+  - **_choisir_mot_** qui prend un nom commun dans le dictionnaire de la langue française (issu du [CNAM](http://abu.cnam.fr) au format csv avec license d'utilisation et de distribution)
   - **_verif_mot_** qui s'assure qu'un nom appartient à ce dictionnaire
 
 ## reste à faire
