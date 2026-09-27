@@ -4,20 +4,7 @@
     -verif_mot s'assure qu'un mot est bien
     un nom commun de la langue française"""
 
-import pandas as pd
-from random import randint
-
-banque_de_noms = pd.read_csv("venv/include/dicoNC.csv", usecols=['nom'], sep='\t', skiprows=58)
-
-
-def choisir_mot(longueur_min=6, longueur_max=10):
-    nb_mots = banque_de_noms.nom.count()
-    mot = ''
-    while (len(mot) <= longueur_min) or (len(mot) >= longueur_max) or (mot.find('-') != -1):
-        numero = randint(0, nb_mots-1)
-        mot = banque_de_noms.loc[numero].nom
-    return ote_accent(mot).upper()
-
+from random import choice
 
 def ote_accent(mot):
     a = ['a', 'à', 'â', 'ä']
@@ -26,18 +13,25 @@ def ote_accent(mot):
     o = ['o', 'ô', 'ö']
     u = ['u', 'ù', 'û', 'ü']
     c = ['c', 'ç']
-    voyelles = [a, c, e, i, o, u]
+    apos = ['-', "'"]
+    voyelles = [a, c, e, i, o, u, apos]
     for voyelle in voyelles:
         for i in range(1, len(voyelle)):
             mot = mot.replace(voyelle[i], voyelle[0])
     return mot
 
+# construction de la liste de mots
+with open("include/dicoNC.csv", "r") as donnees_brutes:
+    for num_ln in range(59):
+        perdu = donnees_brutes.readline()
+    banque_de_noms = [line.split('\t')[1][:-1] for line in donnees_brutes.readlines()]
+    dictionnaire = tuple([ote_accent(mot).upper() for mot in banque_de_noms])
+
+def choisir_mot(longueur_min=6, longueur_max=10):
+    mot = ''
+    while (len(mot) <= longueur_min) or (len(mot) >= longueur_max) or (mot.find('-') != -1):
+        mot = choice(dictionnaire)
+    return mot
 
 def verif_mot(mot_propose):
-    retour = False
-    n = banque_de_noms.nom.count()
-    i = 0
-    while not retour and i < n:
-        retour = mot_propose.upper() == ote_accent(banque_de_noms.loc[i].nom).upper()
-        i += 1
-    return retour
+    return mot_propose.upper() in dictionnaire    

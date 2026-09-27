@@ -13,7 +13,7 @@ class FenetrePendu:
         self.__fenetre.config(bg=tls.bkgd)
         self.__fenetre.title("un pendu sinon rien")
         self.__fenetre.tk.call('wm', 'iconphoto', self.__fenetre._w,
-                               tk.PhotoImage(file='venv/include/iconeNSI.png'))
+                               tk.PhotoImage(file='include/iconeNSI.png'))
 
         # 3) Création et placement du Canvas de dessin de pendu
         self.__dessin = tls.Trace(self.__fenetre, 8)

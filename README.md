@@ -18,12 +18,10 @@ version fenetrée du jeu de pendu en python
   - **_choisir_mot_** qui prend un nom commun dans le dictionnaire de la langue française (issu du [CNAM](http://abu.cnam.fr) au format csv avec license d'utilisation et de distribution)
   - **_verif_mot_** qui s'assure qu'un nom appartient à ce dictionnaire
 
-## reste à faire
-
-**TODO** on pourra proposer une modification de *choix_nom* en utilisant la library **csv** plutôt que **pandas** qui alourdit inutilement (modification proposable aux élèves) 
 
 ## Idées d'améliorations possibles:
 
+- On pourra rajouter à la barre de menu le choix de la taille des mots proposés automatiquement
 - On pourra rajouter un popup lorsque le mot est trouver pour renvoyer la définition du mot sur un dictionnaire en ligne (je pense à [https://www.cnrtl.fr](https://www.cnrtl.fr))  
   la bibliothèque [webbrowser](https://docs.python.org/3/library/webbrowser.html) pourra à ce titre être utile.
   
