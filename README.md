@@ -1,4 +1,4 @@
-![logo NSI](venv/include/iconeNSI.png)
+![logo NSI](include/iconeNSI.png)
 
 # pendu
 version fenetrée du jeu de pendu en python
